@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Modern markdown editor theme - light mode */
+    --background: 218 30% 98%;
+    --foreground: 224 31% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 31% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 31% 15%;
+
+    --primary: 256 100% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 218 20% 95%;
+    --secondary-foreground: 224 31% 25%;
+
+    --muted: 218 20% 97%;
+    --muted-foreground: 224 15% 50%;
+
+    --accent: 256 50% 96%;
+    --accent-foreground: 256 100% 65%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 218 20% 90%;
+    --input: 218 20% 98%;
+    --ring: 256 100% 65%;
+
+    /* Custom editor colors */
+    --editor-bg: 220 25% 99%;
+    --editor-gutter: 220 15% 92%;
+    --preview-bg: 0 0% 100%;
+    --syntax-comment: 220 10% 65%;
+    --syntax-keyword: 256 100% 65%;
+    --syntax-string: 142 70% 45%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Modern markdown editor theme - dark mode */
+    --background: 224 30% 8%;
+    --foreground: 218 30% 92%;
+
+    --card: 224 25% 10%;
+    --card-foreground: 218 30% 92%;
+
+    --popover: 224 25% 10%;
+    --popover-foreground: 218 30% 92%;
+
+    --primary: 256 100% 70%;
+    --primary-foreground: 224 30% 8%;
+
+    --secondary: 224 20% 15%;
+    --secondary-foreground: 218 30% 85%;
+
+    --muted: 224 20% 12%;
+    --muted-foreground: 224 15% 60%;
+
+    --accent: 256 30% 20%;
+    --accent-foreground: 256 100% 70%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 224 20% 18%;
+    --input: 224 20% 15%;
+    --ring: 256 100% 70%;
+
+    /* Custom editor colors - dark mode */
+    --editor-bg: 224 25% 9%;
+    --editor-gutter: 224 20% 16%;
+    --preview-bg: 224 25% 10%;
+    --syntax-comment: 220 10% 50%;
+    --syntax-keyword: 256 100% 75%;
+    --syntax-string: 142 60% 60%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom scrollbars for editor */
+  .editor-scroll::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .editor-scroll::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  .editor-scroll::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 4px;
+  }
+
+  .editor-scroll::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+
+  /* Ensure code blocks in preview are properly styled */
+  .prose pre {
+    @apply bg-muted border border-border;
+  }
+
+  .prose code {
+    @apply bg-muted px-1 py-0.5 rounded text-sm;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-primary bg-accent/50 py-2 px-4 rounded-r;
+  }
+}
