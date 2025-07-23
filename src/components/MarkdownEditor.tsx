@@ -2,10 +2,11 @@ import { useState, useCallback } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Button } from '@/components/ui/button';
-import { Download, FileText, Eye } from 'lucide-react';
+import { Download, FileText, Eye, Sun, Moon } from 'lucide-react';
 import jsPDF from 'jspdf';
 import MarkdownIt from 'markdown-it';
 import { useToast } from '@/hooks/use-toast';
+import { useTheme } from 'next-themes';
 
 const defaultMarkdown = `# Welcome to Markdown PDF Forge
 
@@ -44,6 +45,7 @@ export const MarkdownEditor = () => {
   const [markdown, setMarkdown] = useState(defaultMarkdown);
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
   const { toast } = useToast();
+  const { theme, setTheme } = useTheme();
 
   const handleMarkdownChange = useCallback((e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMarkdown(e.target.value);
@@ -143,8 +145,8 @@ export const MarkdownEditor = () => {
           
           // Handle bold and italic text
           let processedText = line
-            .replace(/\*\*(.*?)\*\*/g, '$1') // Remove bold markers (we'll handle styling separately)
-            .replace(/\*(.*?)\*/g, '$1')     // Remove italic markers
+            .replace(/\*\*([^*]+)\*\*/g, '$1') // Remove bold markers (we'll handle styling separately)
+            .replace(/\*([^*]+)\*/g, '$1')     // Remove italic markers
             .replace(/`(.*?)`/g, '$1');      // Remove code markers
           
           const wrappedText = pdf.splitTextToSize(processedText, maxWidth);
@@ -185,23 +187,38 @@ export const MarkdownEditor = () => {
           <FileText className="h-6 w-6 text-primary" />
           <h1 className="text-xl font-semibold text-foreground">Markdown PDF Forge</h1>
         </div>
-        <Button
-          onClick={generatePDF}
-          disabled={isGeneratingPDF}
-          className="gap-2"
-        >
-          {isGeneratingPDF ? (
-            <>
-              <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-              Generating...
-            </>
-          ) : (
-            <>
-              <Download className="h-4 w-4" />
-              Download PDF
-            </>
-          )}
-        </Button>
+        <div className="flex items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            className="h-9 w-9"
+          >
+            {theme === 'dark' ? (
+              <Sun className="h-4 w-4" />
+            ) : (
+              <Moon className="h-4 w-4" />
+            )}
+            <span className="sr-only">Toggle theme</span>
+          </Button>
+          <Button
+            onClick={generatePDF}
+            disabled={isGeneratingPDF}
+            className="gap-2"
+          >
+            {isGeneratingPDF ? (
+              <>
+                <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+                Generating...
+              </>
+            ) : (
+              <>
+                <Download className="h-4 w-4" />
+                Download PDF
+              </>
+            )}
+          </Button>
+        </div>
       </div>
 
       {/* Main Content */}
