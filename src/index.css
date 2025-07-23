@@ -66,49 +66,49 @@ All colors MUST be HSL.
 
   .dark {
     /* Modern markdown editor theme - dark mode */
-    --background: 222.2 84% 4.9%;
+    --background: 224 71% 4%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 224 71% 4%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 224 71% 4%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 84% 4.9%;
+    --primary: 256 100% 65%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 215 28% 17%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
+    --muted: 215 28% 17%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 215 28% 17%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
     --ring: 212.7 26.8% 83.9%;
 
     /* Custom editor colors - dark mode */
-    --editor-bg: 222.2 84% 4.9%;
-    --editor-gutter: 217.2 32.6% 17.5%;
-    --preview-bg: 222.2 84% 4.9%;
+    --editor-bg: 224 71% 4%;
+    --editor-gutter: 215 28% 17%;
+    --preview-bg: 224 71% 4%;
     --syntax-comment: 215 20.2% 65.1%;
     --syntax-keyword: 210 40% 98%;
     --syntax-string: 142 76% 36%;
     
-    --sidebar-background: 222.2 84% 4.9%;
+    --sidebar-background: 224 71% 4%;
     --sidebar-foreground: 210 40% 98%;
     --sidebar-primary: 210 40% 98%;
-    --sidebar-primary-foreground: 222.2 84% 4.9%;
-    --sidebar-accent: 217.2 32.6% 17.5%;
+    --sidebar-primary-foreground: 224 71% 4%;
+    --sidebar-accent: 215 28% 17%;
     --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-border: 215 28% 17%;
     --sidebar-ring: 212.7 26.8% 83.9%;
   }
 }

@@ -7,7 +7,7 @@ import jsPDF from 'jspdf';
 import MarkdownIt from 'markdown-it';
 import { useToast } from '@/hooks/use-toast';
 import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 const defaultMarkdown = `# Welcome to Markdown PDF Forge
 
@@ -58,6 +58,9 @@ export const MarkdownEditor = () => {
     setMarkdown(e.target.value);
   }, []);
 
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
   const generatePDF = async () => {
     setIsGeneratingPDF(true);
     
@@ -198,11 +201,10 @@ export const MarkdownEditor = () => {
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+            onClick={toggleTheme}
             className="h-9 w-9"
-            disabled={!mounted}
           >
-            {mounted && theme === 'dark' ? (
+            {theme === 'dark' ? (
               <Sun className="h-4 w-4" />
             ) : (
               <Moon className="h-4 w-4" />
