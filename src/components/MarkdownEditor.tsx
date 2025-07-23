@@ -212,6 +212,19 @@ export const MarkdownEditor = () => {
             <span className="sr-only">Toggle theme</span>
           </Button>
           <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleTheme}
+            className="h-9 w-9"
+          >
+            {mounted && theme === 'dark' ? (
+              <Sun className="h-4 w-4" />
+            ) : (
+              <Moon className="h-4 w-4" />
+            )}
+            <span className="sr-only">Toggle theme</span>
+          </Button>
+          <Button
             onClick={generatePDF}
             disabled={isGeneratingPDF}
             className="gap-2"
