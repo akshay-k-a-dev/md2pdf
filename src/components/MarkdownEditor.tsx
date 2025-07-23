@@ -204,7 +204,7 @@ export const MarkdownEditor = () => {
             onClick={toggleTheme}
             className="h-9 w-9"
           >
-            {theme === 'dark' ? (
+            {mounted && theme === 'dark' ? (
               <Sun className="h-4 w-4" />
             ) : (
               <Moon className="h-4 w-4" />
