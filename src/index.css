@@ -66,49 +66,50 @@ All colors MUST be HSL.
 
   .dark {
     /* Modern markdown editor theme - dark mode */
-    --background: 224 30% 8%;
-    --foreground: 218 30% 92%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-    --card: 224 25% 10%;
-    --card-foreground: 218 30% 92%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 224 25% 10%;
-    --popover-foreground: 218 30% 92%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 256 100% 70%;
-    --primary-foreground: 224 30% 8%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 84% 4.9%;
 
-    --secondary: 224 20% 15%;
-    --secondary-foreground: 218 30% 85%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 224 20% 12%;
-    --muted-foreground: 224 15% 60%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 256 30% 20%;
-    --accent-foreground: 256 100% 70%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 75% 55%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 224 20% 18%;
-    --input: 224 20% 15%;
-    --ring: 256 100% 70%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
 
     /* Custom editor colors - dark mode */
-    --editor-bg: 224 25% 9%;
-    --editor-gutter: 224 20% 16%;
-    --preview-bg: 224 25% 10%;
-    --syntax-comment: 220 10% 50%;
-    --syntax-keyword: 256 100% 75%;
-    --syntax-string: 142 60% 60%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --editor-bg: 222.2 84% 4.9%;
+    --editor-gutter: 217.2 32.6% 17.5%;
+    --preview-bg: 222.2 84% 4.9%;
+    --syntax-comment: 215 20.2% 65.1%;
+    --syntax-keyword: 210 40% 98%;
+    --syntax-string: 142 76% 36%;
+    
+    --sidebar-background: 222.2 84% 4.9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 210 40% 98%;
+    --sidebar-primary-foreground: 222.2 84% 4.9%;
+    --sidebar-accent: 217.2 32.6% 17.5%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 212.7 26.8% 83.9%;
   }
 }
 
